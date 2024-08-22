@@ -21,11 +21,14 @@ public class Follow {
 
     //@ManyToOne(fetch = FetchType.LAZY)
     //@JoinColumn(name = "following_id")
+    //private User followingId;
     @Column(name = "following_id")
     private String followingId;
 
+
     //@ManyToOne(fetch = FetchType.LAZY)
     //@JoinColumn(name = "follower_id")
+    //private User followerId;
     @Column(name = "follower_id")
     private String followerId;
 }

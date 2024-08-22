@@ -56,4 +56,14 @@ public class FollowServiceImpl implements FollowService {
                 .toList();
     }
 
+    @Override
+    public Long getFollowerNum(String userId) {
+        return followRepository.countByFollowingId(userId);
+    }
+
+    @Override
+    public Long getFollowingNum(String userId) {
+        return followRepository.countByFollowerId(userId);
+    }
+
 }

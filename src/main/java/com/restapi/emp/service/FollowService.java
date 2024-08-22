@@ -13,4 +13,8 @@ public interface FollowService {
     List<FollowDto> getFollower(String userid);
 
     List<FollowDto> getFollowing(String userid);
+
+    Long getFollowerNum(String userId);
+
+    Long getFollowingNum(String userId);
 }
