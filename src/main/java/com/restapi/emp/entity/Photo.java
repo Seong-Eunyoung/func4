@@ -6,13 +6,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table (name = "follow")
-public class Follow {
+@Table (name = "Photo")
+public class Photo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,14 +22,15 @@ public class Follow {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "following_id")
-    private User followingId;
-    //@Column(name = "following_id")
-    //private String followingId;
+    @JoinColumn(name = "user_id")
+    private User userId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "follower_id")
-    private User followerId;
-    //@Column(name = "follower_id")
-    //private String followerId;
+    @Column(name = "image_url")
+    private String imageUrl;
+
+    @Column(name = "caption")
+    private String caption;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 }

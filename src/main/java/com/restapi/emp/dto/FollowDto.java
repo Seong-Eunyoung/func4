@@ -12,7 +12,9 @@ import lombok.Setter;
 public class FollowDto {
     private Long id;
     private String followingId;
+    private String followingUserName;
     private String followerId;
+    private String followerUserName;
 
 }
 

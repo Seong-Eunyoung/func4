@@ -1,8 +1,6 @@
 package com.restapi.emp.dto.mapper;
 
-import com.restapi.emp.dto.DepartmentDto;
 import com.restapi.emp.dto.UserDto;
-import com.restapi.emp.entity.Department;
 import com.restapi.emp.entity.User;
 
 public class UserMapper {

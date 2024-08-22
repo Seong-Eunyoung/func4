@@ -8,7 +8,6 @@ public class ResourceNotFoundException extends RuntimeException{
     private final String message;
     private final HttpStatus httpStatus;
 
-
     public ResourceNotFoundException(String message){
         //417
         this(message, HttpStatus.EXPECTATION_FAILED);

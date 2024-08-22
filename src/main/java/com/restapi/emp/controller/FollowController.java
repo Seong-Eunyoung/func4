@@ -28,27 +28,5 @@ public class FollowController {
         return ResponseEntity.ok("unfollowed successfully!.");
     }
 
-    @GetMapping("/{userId}/follower")
-    public ResponseEntity<List<FollowDto>> getFollower(@PathVariable String userId) {
-        List<FollowDto> followers = followService.getFollower(userId);
-        return ResponseEntity.ok(followers);
-    }
 
-    @GetMapping("/{userId}/follower_num")
-    public ResponseEntity<Long> getFollowerNum(@PathVariable String userId) {
-        Long followerNum = followService.getFollowerNum(userId);
-        return ResponseEntity.ok(followerNum);
-    }
-
-    @GetMapping("/{userId}/following")
-    public ResponseEntity<List<FollowDto>> getFollowing(@PathVariable String userId) {
-        List<FollowDto> followings = followService.getFollowing(userId);
-        return ResponseEntity.ok(followings);
-    }
-
-    @GetMapping("/{userId}/following_num")
-    public ResponseEntity<Long> getFollowingNum(@PathVariable String userId) {
-        Long followingNum = followService.getFollowingNum(userId);
-        return ResponseEntity.ok(followingNum);
-    }
 }
