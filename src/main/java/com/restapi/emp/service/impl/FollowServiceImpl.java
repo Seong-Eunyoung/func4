@@ -27,7 +27,7 @@ public class FollowServiceImpl implements FollowService {
     public FollowDto followUser(FollowDto followDto) {
         Follow follow = followMapper.mapToFollow(followDto);
 
-        if (Objects.equals(follow.getFollowerId(), follow.getFollowingId()))
+        if (follow.getFollowerId()==follow.getFollowingId())
             throw new ResourceNotFoundException("cannot follow yourself");
 
         if (followRepository
@@ -42,8 +42,8 @@ public class FollowServiceImpl implements FollowService {
     @Transactional
     @Override
     public void unfollowUser(FollowDto followDto) {
-        String followerId = followDto.getFollowerId();
-        String followingId = followDto.getFollowingId();
+        Long followerId = followDto.getFollowerId();
+        Long followingId = followDto.getFollowingId();
         User follower = userRepository.findById(followerId)
                 .orElseThrow(() ->
                         new ResourceNotFoundException("User not found")

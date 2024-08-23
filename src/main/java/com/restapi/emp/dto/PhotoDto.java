@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class PhotoDto {
     private Long id;
-    private String userId;
+    private Long userId;
     private String imageUrl;
     private String caption;
     private LocalDateTime createdAt;

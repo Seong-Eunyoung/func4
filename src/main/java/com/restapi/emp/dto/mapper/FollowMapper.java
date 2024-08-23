@@ -19,8 +19,10 @@ public class FollowMapper {
         return new FollowDto(
                 follow.getId(),
                 follow.getFollowingId().getId(),
+                follow.getFollowingId().getUserId(),
                 follow.getFollowingId().getUserName(),
                 follow.getFollowerId().getId(),
+                follow.getFollowerId().getUserId(),
                 follow.getFollowerId().getUserName()
         );
     }

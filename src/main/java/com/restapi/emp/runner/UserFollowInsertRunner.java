@@ -25,14 +25,14 @@ public class UserFollowInsertRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         User user1 = new User();
-        user1.setId("amy");
+        user1.setUserId("amy");
         user1.setUserName("에이미");
         user1.setEmail("test@a.com");
         user1.setProfileImage("amy.png");
         user1.setPassword("0000");
 
         User user2 = new User();
-        user2.setId("john");
+        user2.setUserId("john");
         user2.setUserName("존");
         user2.setEmail("test2@a.com");
         user2.setPassword("0000");

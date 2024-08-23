@@ -8,17 +8,17 @@ import java.util.List;
 
 public interface UserService {
 
-    UserDto getUserById(String id);
+    UserDto getUserById(Long id);
 
-    List<FollowDto> getFollower(String userid);
+    List<FollowDto> getFollower(Long userid);
 
-    List<FollowDto> getFollowing(String userid);
+    List<FollowDto> getFollowing(Long userid);
 
-    Long getFollowerNum(String userId);
+    Long getFollowerNum(Long userId);
 
-    Long getFollowingNum(String userId);
+    Long getFollowingNum(Long userId);
 
-    List<PhotoDto> getPhotoByUserId(String userId);
+    List<PhotoDto> getPhotoByUserId(Long userId);
 
-    UserDto updateUser(String userId, UserDto updatedUser);
+    UserDto updateUser(Long userId, UserDto updatedUser);
 }

@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
     private final PhotoRepository photoRepository;
 
     @Override
-    public UserDto getUserById(String id) {
+    public UserDto getUserById(Long id) {
         User user = userRepository.findById(id)
                 .orElseThrow(() ->
                         new ResourceNotFoundException("User is not exists with a given id: " + id)
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
 
     @Transactional(readOnly = true)
     @Override
-    public List<FollowDto> getFollower(String userId) {
+    public List<FollowDto> getFollower(Long userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() ->
                         new ResourceNotFoundException("User is not exists with a given id: " + userId)
@@ -53,7 +53,7 @@ public class UserServiceImpl implements UserService {
 
     @Transactional(readOnly = true)
     @Override
-    public List<FollowDto> getFollowing(String userId) {
+    public List<FollowDto> getFollowing(Long userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() ->
                         new ResourceNotFoundException("User is not exists with a given id: " + userId)
@@ -67,7 +67,7 @@ public class UserServiceImpl implements UserService {
 
     @Transactional(readOnly = true)
     @Override
-    public Long getFollowerNum(String userId) {
+    public Long getFollowerNum(Long userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() ->
                         new ResourceNotFoundException("User is not exists with a given id: " + userId)
@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService {
 
     @Transactional(readOnly = true)
     @Override
-    public Long getFollowingNum(String userId) {
+    public Long getFollowingNum(Long userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() ->
                         new ResourceNotFoundException("User is not exists with a given id: " + userId)
@@ -87,7 +87,7 @@ public class UserServiceImpl implements UserService {
 
     @Transactional(readOnly = true)
     @Override
-    public List<PhotoDto> getPhotoByUserId(String userId) {
+    public List<PhotoDto> getPhotoByUserId(Long userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() ->
                         new ResourceNotFoundException("User is not exists with a given id: " + userId)
@@ -99,7 +99,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto updateUser(String userId, UserDto updatedUser) {
+    public UserDto updateUser(Long userId, UserDto updatedUser) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() ->
                         new ResourceNotFoundException("User not exist")

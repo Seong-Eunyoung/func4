@@ -11,9 +11,11 @@ import lombok.Setter;
 @AllArgsConstructor
 public class FollowDto {
     private Long id;
-    private String followingId;
+    private Long followingId;
+    private String followingUserId;
     private String followingUserName;
-    private String followerId;
+    private Long followerId;
+    private String followerUserId;
     private String followerUserName;
 
 }
